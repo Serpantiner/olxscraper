@@ -1,0 +1,1 @@
+web: gunicorn olxscraper_app.wsgi

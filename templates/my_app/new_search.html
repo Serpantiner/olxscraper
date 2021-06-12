@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<h2 style="text-align:center"> {{search | title}}  </h2> <!-- заставляет наш текст идти по центру при выводе | title фильтр по заглвыным буквам-->
+<div class="row"><!-- makes cards below go in a raw-->
+   {%for post in final_postings %}
+
+   <div class="col s4"><!-- adding a Card template from materialize, this is the code for it  -->
+      <div class="card">
+         <div class="card-image">
+            <a href="{{ post.1 }}"><img src="{{ post.3 }}" alt=""></a>
+         </div>
+         <div class="card-content">
+            <p>{{ post.0 }}</p>
+         </div>
+         <div class="card-action">
+            <a href="{{post.1}}">Цена : {{ post.2 }}</a>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+   {%endfor%}
+
+{%endblock content%}
